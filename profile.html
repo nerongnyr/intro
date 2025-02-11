@@ -146,10 +146,23 @@
       color: #fff;
     }
     #time {
-        font-size: 16px;
-        color: fd39a2;
+        font-size: 18px;
         font-weight: bold;
         text-align: center;
+        color: #fd39a2;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      #container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #side, #contents {
+        width: 100%;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
