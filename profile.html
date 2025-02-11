@@ -4,24 +4,25 @@
 	<title>온라인 프로필</title>
 	<meta charset="utf-8">
   <style>
+    body {
+        margin: 0;
+        background: linear-gradient(135deg, #ffb6c1, #ffe6f2);
+        color: #333;
+    }
     table {
       width:90%; 
       border:1px solid #222; 
       border-collapse: collapse; 
       margin: 20px;
-      box-shadow: 1px 2px 1px gainsboro;
+      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
     }
     thead {
-      background:#eee;  
+      background: #ffb6c1;
     }
     th, td {
-      border:1px solid #ccc; 
-      padding:5px;  
-      font-size:0.8em; 
-      background-color: #ffb6c1;
-      border: 1px solid #ffb6c1;
-      color: white;
-      margin: 10px;
+      border: 1px solid #ccc; 
+      padding: 10px;  
+      font-size: 1em; 
       text-align: center;
     }
     th {
@@ -31,30 +32,29 @@
 
     td {
         background-color: #ffe6f2;
-        color: #333;
     }
     table caption {
-        font-size: 18px;
+        font-size: 20px;
         color: #ff69b4;
-        margin: 10px;
         font-weight: bold;
     }
     #container {
         display: flex;
-        width: 800px;
-        height: 800px;
+        width: 100%;
         margin: 50px auto;
-        box-shadow: 1px 2px 3px gainsboro;
         border-radius: 15px;
-        justify-content: space-between;
+        justify-content: center;
+        padding: 30px;
     }
     #side {
-        width: 300px;
+        width: 280px;
         background-color:#ffefff;
         float: left;
-        box-shadow: 1px 2px 3px gainsboro;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
         text-align: center;
         border-radius: 10px;
+        padding: 30px;
+        margin-right: 10px;
     }
     #contents {
         width: 550px;
@@ -67,7 +67,7 @@
         width: 80%;
         border-radius: 20%;
         margin: 30px;
-        box-shadow: 1px 2px 3px gainsboro;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);;
     }
     #namecard h1 {
         color: #fd39a2;
@@ -99,12 +99,19 @@
       margin: 20px;
     }
     #sns a {
-      color: #fff;
+      color: white;
       font-size: 16px;
       border: 1px solid #fd39a2;
-      padding: 5px 15px;
-      border-radius: 20px;
+      padding: 8px 20px;
+      border-radius: 30px;
       background-color: #fd39a2;
+      display: inline-block;
+      margin-top: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    #sns a:hover {
+      background-color: #fff;
+      color: #fd39a2;
     }
     #contents {
       width: 60%;
@@ -112,12 +119,13 @@
       background-color: #fef6f8;
       float: left;
       border-radius: 10px;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
     }
     #contents p {
         margin-left: 15px;
     }
     .subtitle {
-      font-size: 23px;
+      font-size: 24px;
       color: #ff69b4;
       border-bottom: 2px solid #ffb6c1;
       padding-bottom: 10px;
