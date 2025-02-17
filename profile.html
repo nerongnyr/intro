@@ -8,22 +8,23 @@
         margin: 0;
         background: linear-gradient(135deg, #ffb6c1, #ffe6f2);
         color: #333;
+        transition: background-color 0.3s, color 0.3s;
     }
     table {
-      width:90%; 
-      border:1px solid #222; 
-      border-collapse: collapse; 
-      margin: 20px;
-      box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+        width:90%; 
+        border:1px solid #222; 
+        border-collapse: collapse; 
+        margin: 20px;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
     }
     thead {
-      background: #ffb6c1;
+        background: #ffb6c1;
     }
     th, td {
-      border: 1px solid #ccc; 
-      padding: 10px;  
-      font-size: 1em; 
-      text-align: center;
+        border: 1px solid #ccc; 
+        padding: 10px;  
+        font-size: 1em; 
+        text-align: center;
     }
     th {
         background-color: #ffb6c1;
@@ -41,7 +42,7 @@
     #container {
         display: flex;
         width: 100%;
-        margin: 50px auto;
+        margin: 30px auto;
         border-radius: 15px;
         justify-content: center;
         padding: 30px;
@@ -66,7 +67,7 @@
     #namecard img {
         width: 80%;
         border-radius: 20%;
-        margin: 30px;
+        margin: 20px;
         box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);;
     }
     #namecard h1 {
@@ -79,7 +80,7 @@
     #namecard p {
         color: #fd39a2;
         margin-bottom: 15px;
-        margin: 30px;
+        margin: 20px;
         font-style: italic;
     }
     #sns h2 {
@@ -89,61 +90,60 @@
         color: #fd39a2;
     }
     #detail p {       
-      color: #888;
-      margin: 10px;
-      font-size: 14px;
+        color: #888;
+        margin: 10px;
+        font-size: 14px;
     }
     #sns h2 {
-      font-size: 18px;
-      color: #fd39a2;
-      margin: 20px;
+        font-size: 18px;
+        color: #fd39a2;
+        margin: 20px;
     }
     #sns a {
-      color: white;
-      font-size: 16px;
-      border: 1px solid #fd39a2;
-      padding: 8px 20px;
-      border-radius: 30px;
-      background-color: #fd39a2;
-      display: inline-block;
-      margin-top: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+        color: white;
+        font-size: 16px;
+        border: 1px solid #fd39a2;
+        padding: 8px 20px;
+        border-radius: 30px;
+        background-color: #fd39a2;
+        display: inline-block;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
     #sns a:hover {
-      background-color: #fff;
-      color: #fd39a2;
+        background-color: #fff;
+        color: #fd39a2;
     }
     #contents {
-      width: 60%;
-      padding: 20px;
-      background-color: #fef6f8;
-      float: left;
-      border-radius: 10px;
-      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+        width: 60%;
+        padding: 20px;
+        background-color: #fef6f8;
+        float: left;
+        border-radius: 10px;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
     }
     #contents p {
         margin-left: 15px;
     }
     .subtitle {
-      font-size: 24px;
-      color: #ff69b4;
-      border-bottom: 2px solid #ffb6c1;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      text-align: center;
+        font-size: 24px;
+        color: #ff69b4;
+        border-bottom: 2px solid #ffb6c1;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        text-align: center;
     }
     ul {
-      padding-left: 20px;
-      margin-left: 10px;
+        padding-left: 20px;
+        margin-left: 10px;
     }
     ul li {
-     font-size: 16px;
-     color: #666;
-     margin-bottom: 9px;
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 9px;
     }
     mark {
-      background-color: #ffb6c1;
-      color: #fff;
+        background-color: #ffb6c1;
+        color: #fff;
     }
     #time {
         font-size: 18px;
@@ -151,6 +151,161 @@
         text-align: center;
         color: #fd39a2;
         margin-top: 10px;
+    }
+
+    #theme {
+        font-size: 16px;
+        background-color: #fd39a2;
+        color: white;
+        padding: 8px 20px;
+        border: 1px solid #fd39a2;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-top: 20px;
+    }
+    .dark-mode #theme {
+        background-color: #444; 
+        color: #e0e0e0;  
+        border-color: #555; 
+    }
+
+    .dark-mode #theme:hover {
+        background-color: #333;  
+        color: #fd39a2;  
+    }
+
+    #theme:hover {
+        background-color: #fff;
+        color: #fd39a2;
+    }
+
+    .dark-mode {
+        background: #1a1a1a; 
+        color: #e0e0e0; 
+    }
+
+    .dark-mode table {
+        background-color: #333;
+        border-color: #444;
+    }
+
+    .dark-mode thead {
+        background: #444;
+    }
+
+    .dark-mode th, .dark-mode td {
+        border-color: #555;
+        background-color: #222; 
+        color: #ddd; 
+    }
+
+    .dark-mode #side {
+        background-color: #222;  
+        color: #e0e0e0; 
+    }
+
+    .dark-mode #contents {
+        background-color: #333;  
+        color: #e0e0e0;  
+    }
+
+    .dark-mode #namecard h1 {
+        color: #e0e0e0;
+    }
+
+    .dark-mode #sns h2 {
+        color: #e0e0e0;
+    }
+
+    .dark-mode #sns a {
+        color: #fff; 
+    }
+
+    .dark-mode #namecard p {
+        color: #fff; 
+    }
+
+    .dark-mode .subtitle {
+        color: #fff;  
+    }
+
+    .dark-mode #time {
+        color: #ddd;
+    }
+
+    .dark-mode ul li {
+        color: #ddd; 
+    }
+
+    .dark-mode table caption {
+        color: #e0e0e0; 
+    }
+
+    .dark-mode #sns a {
+        background-color: #333; 
+        border-color: #444;
+        color: #e0e0e0; 
+    }
+
+    .dark-mode #theme {
+        background-color: #444;
+        border-color: #ddd;
+        color: #e0e0e0;
+    }
+
+    .light-mode {
+        background: #ffe6f2;  
+        color: #333;  
+    }
+
+    .light-mode table {
+        background-color: #fff;
+        border-color: #ccc;
+    }
+
+    .light-mode thead {
+        background: #ffb6c1;
+    }
+
+    .light-mode th, .light-mode td {
+        border-color: #ddd;
+        background-color: #ffe6f2;
+        color: #333;
+    }
+
+    .light-mode #side {
+        background-color: #ffefff;
+        color: #333;
+    }
+
+    .light-mode #contents {
+        background-color: #fef6f8;
+        color: #333;
+    }
+
+    .light-mode #namecard h1 {
+        color: #fd39a2;
+    }
+
+    .light-mode #sns h2 {
+        color: #fd39a2;
+    }
+
+    .light-mode #time {
+        color: #fd39a2;
+    }
+
+    .light-mode #theme {
+        background-color: #fd39a2;
+        color: white;
+        border: 1px solid #fd39a2;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .light-mode #theme:hover {
+        background-color: #fff;
+        color: #fd39a2;
     }
 
     @media (max-width: 768px) {
@@ -167,7 +322,7 @@
   </style>
 </head>
 
-<body>
+<body class="light-mode">
     <div id="container">
         <!-- 사이드바 -->
         <div id="side">
@@ -184,7 +339,8 @@
                 <h2>SNS</h2>
                 <h3><a href="#">클릭!</a></h3>
             </div>           
-            <div id="time" onclick="fnAlert"></div>
+            <div id="time"></div>
+            <button id="theme" onclick="fnMode()">Dark Mode</button>
         </div>
         <div id="contents">
             <section>
@@ -264,4 +420,17 @@
         let obj = document.querySelector("#time")
         obj.innerHTML = time;
     }, 1000);
+
+    function fnMode() {
+            let body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+
+            let button = document.getElementById("theme");
+            if (document.body.classList.contains("dark-mode")) {
+                button.innerText = "Light Mode";
+            } else {
+                button.innerText = "Dark Mode";
+            }
+    }
 </script>
