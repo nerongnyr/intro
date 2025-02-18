@@ -42,6 +42,7 @@
     #container {
         display: flex;
         width: 100%;
+        height: 800px;
         margin: 30px auto;
         border-radius: 15px;
         justify-content: center;
@@ -49,6 +50,7 @@
     }
     #side {
         width: 280px;
+        height: 780px;
         background-color:#ffefff;
         float: left;
         box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
@@ -58,11 +60,13 @@
         margin-right: 10px;
     }
     #contents {
-        width: 550px;
-        height: 95%;
-        background-color: #eee;
+        width: 1000px;
+        height: 800px;
+        padding: 20px;
+        background-color: #fef6f8;
         float: left;
-        color: #333;
+        border-radius: 10px;
+        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
     }
     #namecard img {
         width: 80%;
@@ -113,14 +117,6 @@
         background-color: #fff;
         color: #fd39a2;
     }
-    #contents {
-        width: 60%;
-        padding: 20px;
-        background-color: #fef6f8;
-        float: left;
-        border-radius: 10px;
-        box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
-    }
     #contents p {
         margin-left: 15px;
     }
@@ -151,6 +147,29 @@
         text-align: center;
         color: #fd39a2;
         margin-top: 10px;
+    }
+
+    #menu {
+         display: flex;
+         justify-content: space-around;
+         margin-bottom: 20px;
+         background-color: #ffb6c1;
+         padding: 10px;
+         border-radius: 5px;
+    }
+
+    #menu a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    #menu a:hover {
+        background-color: #fd39a2;
     }
 
     #theme {
@@ -248,10 +267,15 @@
         color: #e0e0e0; 
     }
 
-    .dark-mode #theme {
-        background-color: #444;
-        border-color: #ddd;
-        color: #e0e0e0;
+    .dark-mode #menu {
+        background-color: #444; 
+        color: #e0e0e0;  
+        border-color: #555; 
+    }
+
+    .dark-mode #menu a:hover {
+        background-color: #333;  
+        color: #fd39a2;
     }
 
     .light-mode {
@@ -320,6 +344,44 @@
         margin: 10px 0;
       }
     }
+
+    section {
+        display: none; 
+    }
+
+    section.active {
+        display: block; 
+    }
+
+    #projects, #hobbies, #contact {
+    margin-bottom: 30px;
+    }
+
+    #projects ul, #hobbies ul {
+        padding-left: 20px;
+        list-style-type: none;
+    }
+
+    #projects li, #hobbies li {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 15px;
+    }
+
+    #projects h3, #hobbies h3 {
+        font-size: 20px;
+        color: #fd39a2;
+    }
+
+    #contact p {
+        font-size: 16px;
+        color: #666;
+    }
+
+    #contact a {
+        color: #fd39a2;
+        text-decoration: none;
+    }
   </style>
 </head>
 
@@ -340,17 +402,28 @@
                 <h2>SNS</h2>
                 <h3><a href="#">클릭!</a></h3>
             </div>           
+
             <div id="time"></div>
             <button id="theme" onclick="fnMode()">Dark Mode</button>
         </div>
+
         <div id="contents">
-            <section>
+            <!-- 메뉴 -->
+            <div id="menu">
+                <a href="#" onclick="showSection('about')">자기소개</a>
+                <a href="#" onclick="showSection('experience')">Experience</a>
+                <a href="#" onclick="showSection('skills')">보유 기술</a>
+                <a href="#" onclick="showSection('education')">Education</a>
+            </div>
+
+            <!-- 자기소개 -->
+            <section id="about" class="active">
                 <h2 class="subtitle">자기소개</h2>
                 <p><mark>프로그래밍</mark>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
             </section>
 
             <!-- 경력 -->
-            <section>
+            <section id="experience">
                 <h2 class="subtitle">Experience</h2>
                 <ul>
                     <li>프론트엔드
@@ -366,48 +439,76 @@
                             <li>오라클 더 잘함</li>
                         </ul>                        
                     </li>
-                </ul>             
+                </ul>
             </section>
 
-            <!-- 숙련도 -->
-            <section>
+            <!-- 보유 기술 -->
+            <section id="skills">
                 <h2 class="subtitle">보유 기술</h2>
-                <li style="list-style: none;"> 
-                    <ul>
-                        <li>자바 </li>
-                        <li>오라클</li>
-                    </ul>                        
-                </li>
+                <ul>
+                    <li>자바 </li>
+                    <li>오라클</li>
+                </ul>
             </section>
 
             <!-- 학력 -->
-            <section>
+            <section id="education">
                 <h2 class="subtitle">Education</h2>
                 <table>
-                  <caption>학력 사항</caption>
-                  <thead>
-                      <tr>
-                          <th>출신학교</th>
-                          <th>전공</th>
-                          <th>기간</th>
-                          <th>구분</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>좋은대학교</td>
-                          <td>좋은학과</td>
-                          <td>2010.3 ~ 2013.2</td>
-                          <td>졸업</td>
-                      </tr>
-                      <tr>
-                          <td>꽤좋은고등학교</td>
-                          <td> - </td>
-                          <td>2007.3 ~ 2009.2</td>
-                          <td>졸업</td>
-                      </tr>
-                  </tbody>
+                    <caption>학력 사항</caption>
+                    <thead>
+                        <tr>
+                            <th>출신학교</th>
+                            <th>전공</th>
+                            <th>기간</th>
+                            <th>구분</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>좋은대학교</td>
+                            <td>좋은학과</td>
+                            <td>2010.3 ~ 2013.2</td>
+                            <td>졸업</td>
+                        </tr>
+                        <tr>
+                            <td>꽤좋은고등학교</td>
+                            <td> - </td>
+                            <td>2007.3 ~ 2009.2</td>
+                            <td>졸업</td>
+                        </tr>
+                    </tbody>
                 </table>
+            </section>
+
+            <div id="menu">
+                <a href="#" onclick="showSection('projects')">프로젝트</a>
+                <a href="#" onclick="showSection('hobbies')">취미</a>
+            </div>
+
+            <!-- 프로젝트 -->
+            <section id="projects" class="active">
+                <h2 class="subtitle">프로젝트</h2>
+                <ul>
+                    <li>
+                        <h3>개발</h3>
+                        <p>구현.</p>
+                    </li>
+                    <li>
+                        <h3>db</h3>
+                        <p>Oracle을 사용하여...</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 취미 -->
+            <section id="hobbies">
+                <h2 class="subtitle">취미</h2>
+                <ul>
+                    <li>독서: 종ㅈ옹</li>
+                    <li>영화 감상: 문화적 소양을 쌓고 있음.</li>
+                    <li>음악 감상: 매일매일</li>
+                </ul>
             </section>
         </div>        
     </div>
@@ -434,4 +535,15 @@
                 button.innerText = "Dark Mode";
             }
     }
+
+    function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const activeSection = document.getElementById(sectionId);
+            activeSection.classList.add('active');
+        }
+
 </script>
